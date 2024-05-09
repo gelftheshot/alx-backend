@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' 
+'''
     LRU Caching: Create a class LRUCache that inherits from BaseCaching
 '''
 
@@ -25,16 +25,22 @@ class LRUCache(BaseCaching):
             if key not in self.key_queue:
                 self.key_queue.append(key)
             else:
-                self.key_queue.append(self.key_queue.pop(self.key_queue.index(key)))
+                self.key_queue.append(
+                    self.key_queue.pop(self.key_queue.index(key))
+                )
             if len(self.key_queue) > BaseCaching.MAX_ITEMS:
                 discard = self.key_queue.pop(0)
                 del self.cache_data[discard]
                 print('DISCARD: {:s}'.format(discard))
 
     def get(self, key):
-        ''' Return value stored in `key` key of cache.
-            If key is None or does not exist in cache, return None. '''
+        '''
+        Return value stored in `key` key of cache.
+        If key is None or does not exist in cache, return None.
+        '''
         if key is not None and key in self.cache_data:
-            self.key_queue.append(self.key_queue.pop(self.key_queue.index(key)))
+            self.key_queue.append(
+                self.key_queue.pop(self.key_queue.index(key))
+            )
             return self.cache_data[key]
         return None
