@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-''' LRU Caching: Create a class LRUCache that inherits from BaseCaching
-                 and is a caching system
+''' 
+    LRU Caching: Create a class LRUCache that inherits from BaseCaching
 '''
 
 BaseCaching = __import__('base_caching').BaseCaching
