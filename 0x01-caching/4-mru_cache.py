@@ -12,7 +12,7 @@ class MRUCache(BaseCaching):
     '''
 
     def __init__(self):
-        ''' constructor '''
+        ''' Initialize class instance. '''
         super().__init__()
         self.key_queue = []
 
@@ -29,7 +29,7 @@ class MRUCache(BaseCaching):
                     self.key_queue.pop(self.key_queue.index(key))
                 )
             if len(self.key_queue) > BaseCaching.MAX_ITEMS:
-                discard = self.key_queue.pop(-1)
+                discard = self.key_queue.pop(-2)
                 del self.cache_data[discard]
                 print('DISCARD: {:s}'.format(discard))
 
