@@ -2,7 +2,7 @@
 """
 A Basic flask application
 """
-from flask import Flask,request,render_template,
+from flask import Flask, request, render_template
 from flask_babel import Babel
 
 
@@ -27,4 +27,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
