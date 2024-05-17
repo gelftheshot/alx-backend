@@ -18,11 +18,6 @@ class Config(object):
 app.config.from_object('1-app.Config')
 
 
-@app.route('/')
-def main() -> str:
-    """ A function to return a template """
-    return render_template('1-index.html')
-
 @app.route('/', methods=['GET'], strict_slashes=False)
 def index() -> str:
     """ GET /
