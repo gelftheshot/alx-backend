@@ -10,13 +10,6 @@ app = Flask(__name__)
 babel = Babel(app)
 
 
-@babel.localeselector
-def get_locale():
-    """
-    Gets locale from request object
-    """
-    return request.accept_languages.best_match(app.config['en', 'fr'])
-
 
 @app.route('/')
 def index():
