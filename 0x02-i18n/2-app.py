@@ -30,7 +30,7 @@ def get_locale() -> str:
     """
     Gets locale from request object
     """
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(app.config['en','fr'])
 
 
 @app.route('/')
