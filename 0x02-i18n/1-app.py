@@ -1,7 +1,4 @@
-#!/usr/bin/python3
-""" Using Babel for the first time in my life """
-
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 from flask_babel import Babel
 from os import getenv
 
@@ -10,10 +7,11 @@ babel = Babel(app)
 
 
 class Config(object):
-    """ The class to configure Babel """
-    LANGUAGES = ["en", "fr"]
+    """ Setup - Babel configuration """
+    LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
+
 
 app.config.from_object('1-app.Config')
 
