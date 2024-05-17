@@ -10,17 +10,15 @@ class Config():
     """ The class to configure Babel """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = 'en'
-    TIMEZONE = pytz.timezone("UTC")
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 app = Flask(__name__)
 app.config.from_object(Config)
-babel = Babel(app)
 
 @app.route('/')
 def main():
     """ A function to return a template """
-    current_time = datetime.now(Config.TIMEZONE)
-    return render_template('1-index.html', current_time=current_time)
+    return render_template('1-index.html')
 
 if __name__ == '__main__':
     app.run()
