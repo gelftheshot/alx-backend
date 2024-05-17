@@ -7,8 +7,6 @@ from datetime import datetime
 import pytz
 
 app = Flask(__name__)
-babel = Babel(app)
-
 
 class Config():
     """ The class to configure Babel """
@@ -17,6 +15,8 @@ class Config():
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 app.config.from_object(Config)
+
+babel = Babel(app)
 
 @app.route('/')
 def main():
