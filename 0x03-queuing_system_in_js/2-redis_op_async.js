@@ -14,7 +14,7 @@ const setNewSchool = async (schoolName, value) => {
     const res = await setAsync(schoolName, value);
     print(res);
   } catch (err) {
-    console.error('Error', err);
+    console.log('Error', err);
   }
 };
 
@@ -24,7 +24,7 @@ const displaySchoolValue = async (schoolName) => {
     const value = await getAsync(schoolName);
     console.log(value);
   } catch(err) {
-    console.error('Error', err);
+    console.log('Error', err);
   }
 }
 
