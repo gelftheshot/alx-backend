@@ -8,4 +8,5 @@ const sendNotification = (phoneNumber, message) => {
 
 Kue.process('Myjobtype', (job, done) => {
   sendNotification(job.data.phoneNumber, job.data.message)
+  done()
 });
