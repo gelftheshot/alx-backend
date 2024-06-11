@@ -18,3 +18,7 @@ const job = push_notification_code.create('Myjobtype', jobData).save((error) => 
 job.on('complete', () => {
   console.log('Notification job completed');
 });
+
+job.on('failed', (errorMessage) => {
+  console.log('Job failed', errorMessage);
+});
