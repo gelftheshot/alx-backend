@@ -5,8 +5,7 @@ const jobData = {
   message: 'i love you',
 }
 
-
-const push_notification_code = kue.createQueue()
+const push_notification_code = kue.createQueue();
 
 const job = push_notification_code.create('Myjobtype', jobData).save((error) => {
   if (error) {
@@ -14,4 +13,8 @@ const job = push_notification_code.create('Myjobtype', jobData).save((error) => 
   } else {
     console.log('Notification job created:', job.id);
   }
+});
+
+job.on('complete', () => {
+  console.log('Notification job completed');
 });
