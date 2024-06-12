@@ -51,7 +51,7 @@ const jobs = [
 const Kue = kue.createQueue();
 
 for (const jobData of jobs) {
-  const job = Kue.create('Myjobtype', jobData).save((error) => {
+  const job = Kue.create('push_notification_code_2', jobData).save((error) => {
     if (error) {
       console.log('Notification job failed');
     } else {
