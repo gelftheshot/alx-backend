@@ -9,21 +9,19 @@ describe('createPushNotificationsJobs', () => {
   });
 
 it('should create jobs in the queue for each item in jobs', (done) => {
-  const jobs = [{ id: 1 }, { id: 2 }];
+  const jobs = [{ job: { id: 1 } }, { job: { id: 2 } }];
   const queue = kue.createQueue();
 
-  // Stub the queue.create method
   const createStub = sinon.stub(queue, 'create');
 
-  // Simulate job processing
   createStub.callsFake((type, data) => {
     return {
       save: (callback) => {
-        callback(null);  // Simulate successful job creation
+        callback(null);
       },
       on: (event, callback) => {
         if (event === 'complete') {
-          callback();  // Simulate job completion
+          callback();
         }
       },
       id: data.id,
