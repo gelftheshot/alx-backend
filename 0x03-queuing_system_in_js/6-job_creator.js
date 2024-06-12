@@ -7,7 +7,7 @@ const jobData = {
 
 const push_notification_code = kue.createQueue();
 
-const job = push_notification_code.create('Myjobtype', jobData).save((error) => {
+const job = push_notification_code.create('push_notification_code', jobData).save((error) => {
   if (error) {
     console.log('Notification job failed');
   } else {
