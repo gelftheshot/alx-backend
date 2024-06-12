@@ -70,3 +70,4 @@ app.listen(1245, () => {
   reserveSeat(50);
   reservationEnabled = true;
   console.log('API available on localhost via port 1245');
+});
